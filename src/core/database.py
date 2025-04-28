@@ -6,11 +6,8 @@ from src.core.config import settings
 
 # Cria a engine síncrona
 engine = create_engine(
-    f"postgresql+psycopg2://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}@localhost:5432/{settings.POSTGRES_DB}",
+    f"postgresql+psycopg2://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.POSTGRES_DB}",
     pool_pre_ping=True, # Verifica conexão antes de usar
-    # connect_args={
-    #     "options": f"-c search_path=public"
-    # }
 )
 
 # Cria uma fábrica de sessões
