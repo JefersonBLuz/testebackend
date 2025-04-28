@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 
 # Dados do superusuário inicial (exemplo)
 # Pode ser movido para variáveis de ambiente em config.py se preferir
-INITIAL_SUPERUSER_EMAIL = "admin@example.com"
-INITIAL_SUPERUSER_PASSWORD = "changethis"
+INITIAL_SUPERUSER_EMAIL = settings.USER_EMAIL_INTINAL 
+INITIAL_SUPERUSER_PASSWORD = settings.USER_PASSWORD_INTINAL
 
 def init_db(db: Session) -> None:
     # Cria todas as tabelas definidas em Base (ex: users)
