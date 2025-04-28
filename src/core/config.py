@@ -31,8 +31,8 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
 
     # --- First Superuser (opcional, para criação inicial) --- #
-    USER_EMAIL_INTINAL: EmailStr = os.getenv("USER_EMAIL_INTINAL")
-    USER_PASSWORD_INTINAL: str = os.getenv("USER_PASSWORD_INTINAL")
+    USER_EMAIL_INITIAL: EmailStr = os.getenv("USER_EMAIL_INITIAL")
+    USER_PASSWORD_INITIAL: str = os.getenv("USER_PASSWORD_INITIAL")
 
     class Config:
         case_sensitive = True
