@@ -13,6 +13,8 @@ class Settings(BaseSettings):
 
     # --- Database --- #
     DATABASE_URL: str = os.getenv("DATABASE_URL")
+    DB_HOST: str = os.getenv("DB_HOST", "localhost")
+    DB_PORT: int = int(os.getenv("DB_PORT", "5432"))  # Convert to integer with default 5432
 
     # --- PostgreSQL Auth --- #
     POSTGRES_USER: str = os.getenv("POSTGRES_USER", "admin")
