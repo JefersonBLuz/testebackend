@@ -5,12 +5,6 @@ from src.api.v1.api import api_router as api_router_v1
 from src.core.database import Base, engine
 from src.db.seed import init_db
 
-# Criar as tabelas do banco de dados
-Base.metadata.create_all(bind=engine)
-
-# Criar usuário inicial
-init_db()
-
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json" # URL do Swagger UI
@@ -19,8 +13,8 @@ app = FastAPI(
 # Configurar CORS
 # Ajuste as origens permitidas conforme necessário (ex: URL de produção depois)
 origins = [
-    "http://localhost:3001", # Frontend Next.js dev
-    "http://127.0.0.1:3001",
+    "http://localhost:3000", # Frontend Next.js dev
+    "http://127.0.0.1:3000",
 ]
 
 app.add_middleware(
